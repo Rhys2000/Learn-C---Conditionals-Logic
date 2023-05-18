@@ -432,7 +432,7 @@ int main() {
     
     int gryffindor = 0, hufflepuff = 0, ravenclaw = 0, slytherin = 0;
     int answer1, answer2, answer3, answer4;
-    int max;
+    int max = 0;
     std::string house;
       
     std::cout << "The Sorting Hat Quiz!\n";
@@ -524,4 +524,44 @@ int main() {
     std::cout << house << "!\n";
     
     //Rock, Paper, Scissors Project
+    
+    /*
+    - You may have played Rock, Paper, Scissors, but have you played Rock, Paper, Scissors, Lizard, Spock? This is the infamous game brought to popularity with the TV show The Big Bang Theory.
+    - Write a rock_paper_scissors.cpp program that:
+        > Prompts the user to select either Rock, Paper, Scissors, Lizard, or Spock.
+        > Instructs the computer to randomly select either Rock, Paper, Scissors, Lizard, or Spock.
+        > Compares the user’s choice and the computer’s choice and determine the winner.
+        > Informs the user who the winner is.
+    - This project will be particularly challenging due to its complex logic. Beware! Only the brave should venture forth.
+    */
+    
+    // 1. Note from the creator, Sam Kass: “I invented this game (with Karen Bryla) because it seems like when you know someone well enough, 75-80% of any Rock Paper Scissors games you play with that person end up in a tie. Well, here is a slight variation that reduces that probability. This version is also nice because it satisfies the Law of Fives.”
+    // 2. Begin by writing a multi-line comment that describes what this program will do.
+    // 3. Let’s create a skeleton for the program.
+    // 4. In this program, we need a random number for the computer’s choice and we also need to declare an int variable called user for the user’s choice. Now we have a random number that could be 1, 2, or 3 for the computer. And we also have a variable for user’s input.
+    // 5. Before moving on, let’s compile and execute using the terminal to make sure there are no bugs.
+    // 6. Prompt the user to select either Rock, Paper, or Scissors:
+    // 7. Grab user’s input using std::cin and store it into user.
+    // 8. Now we have both the user’s choice and the computer’s randomized choice, let’s use conditionals & logic to determine the winner. Make sure to jot down the logic of Rock Paper Scissors on a piece of paper before you start coding. Take your time!
+    
+    srand(time(NULL));
+    int computer = rand() % 3 + 1;
+    int user = 0;
+
+    std::cout << "====================\n";
+    std::cout << "Rock Paper Scissors!\n";
+    std::cout << "====================\n";
+    std::cout << "1) ✊\n";
+    std::cout << "2) ✋\n";
+    std::cout << "3) ✌️\n";
+    std::cout << "Shoot! ";
+    std::cin >> user;
+
+    if((computer == 1 && user == 3) || (computer == 2 && user == 1) || (computer == 3 && user == 2)) {
+        std::cout << "Computer Wins!\n";
+    } else if(computer == user) {
+        std::cout << "It's a Draw!\n";
+    } else {
+        std::cout << "User Wins!\n";
+    }
 }

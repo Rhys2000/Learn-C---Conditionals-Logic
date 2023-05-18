@@ -313,11 +313,96 @@ int main() {
     std::cout << "Please Enter a Year: ";
     std::cin >> year;
       
-    if(y < 1000 || y > 9999) {
+    if(year < 1000 || year > 9999) {
         std::cout << "Invalid Year Entry.\n";
-    } else if(year % 4 == 0 && year % 100 != 0 || y % 400 == 0) {
+    } else if((year % 4 == 0 && year % 100 != 0) || year % 400 == 0) {
         std::cout << year << " is a leap year.\n";
     } else {
         std::cout << year << " is not a leap year.\n";
     }
+    
+    //Magic 8-Ball Project
+    
+    /*
+    - The Magic 8-Ball is a super popular toy used for fortune-telling or seeking advice, developed in the 1950s!
+    - Write a magic8.cpp program that will output a random fortune each time it executes.
+    - The answers inside a standard Magic 8-Ball are: It is certain, It is decidedly so, Without a doubt, Yes - definitely, You may rely on it, As I see it, yes, Most likely, Outlook good, Yes, Signs point to yes, Reply hazy, try again, Ask again later, Better not tell you now, Cannot predict now, Concentrate and ask again, Don't count on it, My reply is no, My sources say no, Outlook not so good, Very doubtful.
+    */
+    
+    // 1. Let’s create a skeleton for the program.
+    // 2. The first line should be the same across all executions, so let’s output the phrase MAGIC 8-BALL:
+    // 3. Similar to the Coin Flip program, we need to generate a random number. C++ has a std::rand() function from cstdlib that generates a random number. So, create an int variable and set it equal to a random number: int answer = std::rand(); And output it in the terminal. Don’t forget to add #include <cstdlib> at the top.
+    // 4. There are 20 different text outputs in the official Magic 8-Ball, but let’s write your own. And let’s do 10 of them. So we don’t just want any random number. We want a random number from 0-9. Change your answer to: int answer = std::rand() % 10; The % is the modulo symbol that returns the remainder.
+    // 5. If you click Save a bunch of times, you will realize that answer doesn’t change. For our program to work, we need to get a different random number for each execution. To do so, we need to add this line of code before the declaration of answer: srand(time(NULL)); This sets the “seed” of the random number generator.
+    // 6. Now is where the fun part comes in! Write an if statement where if answer is equal to 0, your program outputs the phrase It is certain.
+    // 7. And now add an else statement for the 10th answer: Very doubtful.
+    // 8. And now do the same for the 8 other answers using else ifs.
+    
+    std::cout << "MAGIC 8-BALL:\n\n";
+    
+    srand(time(NULL));
+    int answer = std::rand() % 10;
+    
+    switch(answer) {
+        case 0:
+            std::cout << "It is certain.\n";
+            break;
+        case 1:
+            std::cout << "It is decidely so.\n";
+            break;
+        case 2:
+            std::cout << "Without a doubt.\n";
+            break;
+        case 3:
+            std::cout << "Yes - definitely.\n";
+            break;
+        case 4:
+            std::cout << "You may rely on it.\n";
+            break;
+        case 5:
+            std::cout << "As I see it, yes.\n";
+            break;
+        case 6:
+            std::cout << "Most likely.\n";
+            break;
+        case 7:
+            std::cout << "Outlook good.\n";
+            break;
+        case 8:
+            std::cout << "Yes.\n";
+            break;
+        case 9:
+            std::cout << "Signs point to yes.\n";
+            break;
+        case 10:
+            std::cout << "Reply hazy, try again.\n";
+            break;
+        case 11:
+            std::cout << "Ask again later.\n";
+            break;
+        case 12:
+            std::cout << "Better not tell you now.\n";
+            break;
+        case 13:
+            std::cout << "Cannot predict now.\n";
+            break;
+        case 14:
+            std::cout << "Concentrate and ask again.\n";
+            break;
+        case 15:
+            std::cout << "Don't count on it.\n";
+            break;
+        case 16:
+            std::cout << "My reply is no.\n";
+            break;
+        case 17:
+            std::cout << "My sources say no.\n";
+            break;
+        case 18:
+            std::cout << "Outlook not so good.\n";
+            break;
+        case 19:
+            std::cout << "Very doubtful.\n";
+            break;
+      }
 }

@@ -238,4 +238,86 @@ int main() {
             break;
       }
       std::cout << "His weight would be " << weight << " pounds.\n";
+    
+    /*
+    - Often, when we are trying to create a control flow for our program, we’ll encounter situations where the logic cannot be satisfied with a single condition.
+    - Logical operators are used to combine two or more conditions. They allow programs to make more flexible decisions. The result of the operation of a logical operator is a bool value of either true or false.
+    - There are three logical operators that we will cover:
+        > &&: the and logical operator
+        > ||: the or logical operator
+        > !: the not logical operator
+    - We will also discuss the order of operations. Let’s get started!
+    */
+    
+    /*
+    - The and logical operator is denoted by &&. It returns true if the condition on the left and the condition on the right are both true. Otherwise, it returns false.
+    - For instance:
+        > ( 1 < 2 && 2 < 3 ) returns true
+        > ( 1 < 2 && 2 > 3 ) returns false
+    - The keyword and can also be used in the place of &&.
+    */
+    
+    int hunger = true;
+    int anger = true;
+      
+    if(hunger == true && anger == true) {
+        std::cout << "Hangry.\n";
+    }
+    
+    /*
+    - The or logical operator is denoted by ||. It returns true when the condition on the left is true or the condition on the right is true. Only one of them needs to be true.
+    - For instance:
+        > ( 1 < 2 || 2 > 3 ) returns true
+        > ( 1 > 2 || 2 > 3 ) returns false
+    - The keyword or can be used in the place of ||.
+    */
+    
+    // 1. Write the following if statement: If day is equal to 6 or day is equal to 7, then print the word "Weekend".
+    
+    int day = 6;
+
+    if(day == 6 || day == 7) {
+        std::cout << "Weekend.\n";
+    }
+    
+    /*
+    - The not logical operator is denoted by !. It reverses the bool outcome of the expression that immediately follows.
+    - For instance:
+        > ( !true ) returns false
+        > ( !false ) returns true
+        > ( !(10 < 11) ) returns false
+    - The keyword not can be used in the place of !.
+    */
+    
+    // 1. Write the following if statement: If the user is !logged_in, then print the phrase "Try again".
+    
+    bool logged_in = false;
+      
+    if(!logged_in) {
+        std::cout << "Try again.\n";
+    }
+    
+    /*
+    - Awesome! In this mini-lesson, we’ve added more operators to our toolbox:
+        > &&: the and logical operator
+        > ||: the or logical operator
+        > !: the not logical operator
+    */
+    
+    // 1. Write a leap_year.cpp program that: Takes a year as input, Checks to see if the year is a four-digit number, and Displays whether or not the year falls on a leap year.
+    // 2. There are 3 criteria that must be taken into account to identify a leap year: If the year can be evenly divided by 4 then it is a leap year, however, If that year can be evenly divided by 100, and it is not evenly divided by 400, then it is NOT a leap year, and If that year is evenly divisible by 400, then it is a leap year.
+    // 3. Take some time to research and brainstorm before starting to write the code!
+    
+    int year;
+    
+    std::cout << "Please Enter a Year: ";
+    std::cin >> year;
+      
+    if(y < 1000 || y > 9999) {
+        std::cout << "Invalid Year Entry.\n";
+    } else if(year % 4 == 0 && year % 100 != 0 || y % 400 == 0) {
+        std::cout << year << " is a leap year.\n";
+    } else {
+        std::cout << year << " is not a leap year.\n";
+    }
 }
